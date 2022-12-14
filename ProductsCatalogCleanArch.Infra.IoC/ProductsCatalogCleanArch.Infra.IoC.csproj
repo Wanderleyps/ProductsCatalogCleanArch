@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProductsCatalogCleanArch.Application\ProductsCatalogCleanArch.Application.csproj" />
+    <ProjectReference Include="..\ProductsCatalogCleanArch.Infra.Data\ProductsCatalogCleanArch.Infra.Data.csproj" />
+    <ProjectReference Include="..\ProductsCatalogCleanArchMvc.Domain\ProductsCatalogCleanArch.Domain.csproj" />
+  </ItemGroup>
 
 </Project>
