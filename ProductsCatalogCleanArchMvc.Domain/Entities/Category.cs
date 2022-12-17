@@ -18,7 +18,7 @@ namespace ProductsCatalogCleanArch.Domain.Entities
 
         public Category(int id, string name)
         {
-            DomainExceptionValidation.When(id < 0, "Invalid Id value");
+            DomainExceptionValidation.When(id < 0, "Invalid Id value.");
             Id = id;
             ValidateDomain(name);
         }
@@ -29,6 +29,7 @@ namespace ProductsCatalogCleanArch.Domain.Entities
         }
         public ICollection<Product> Products { get; set; }
 
+        //se não passar na validação uma exceção será gerada
         private void ValidateDomain(string name)
         {
             DomainExceptionValidation.When(string.IsNullOrEmpty(name),

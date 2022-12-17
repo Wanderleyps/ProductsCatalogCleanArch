@@ -2,6 +2,7 @@
 
 namespace ProductsCatalogCleanArch.Domain.Entities
 {
+    //atributo sealed impede que outra classe possa herdar de Product
     public sealed class Product : Entity
     {
         public string Name { get; private set; }
@@ -27,7 +28,7 @@ namespace ProductsCatalogCleanArch.Domain.Entities
             ValidateDomain(name, description, price, stock, image);
             CategoryId = categoryId;
         }
-
+        //valida as regras de negócio para cada atributo
         private void ValidateDomain(string name, string description, decimal price, int stock, string image)
         {
             DomainExceptionValidation.When(string.IsNullOrEmpty(name),
