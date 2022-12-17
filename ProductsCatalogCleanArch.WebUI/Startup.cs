@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProductsCatalogCleanArch.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,9 @@ namespace ProductsCatalogCleanArch.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //utilizando o método criado na classe DependencyInjection no projeto Infra.IoC,
+            //algumas das classes registradas nesse método serão utilizados nos controllers
+            services.AddInfrastructure(Configuration);
             services.AddControllersWithViews();
         }
 

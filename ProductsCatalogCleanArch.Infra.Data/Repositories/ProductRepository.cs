@@ -7,7 +7,7 @@ using ProductsCatalogCleanArch.Infra.Data.Context;
 
 namespace ProductsCatalogCleanArch.Infra.Data.Repositories
 {
-    class ProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository
     {
         private ApplicationDbContext _productContext;
         public ProductRepository(ApplicationDbContext context)

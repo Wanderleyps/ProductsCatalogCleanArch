@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductsCatalogCleanArch.Infra.Data.Repositories
 {
-    class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private ApplicationDbContext _categoryContext;
         public CategoryRepository(ApplicationDbContext context)
