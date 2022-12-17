@@ -58,6 +58,7 @@ namespace ProductsCatalogCleanArch.Domain.Tests
             action.Should().NotThrow<DomainExceptionValidation>();
         }
 
+        [Fact]
         public void CreateProduct_WithNullImageName_NoNullReferenceException()
         {
             Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 99, null);
