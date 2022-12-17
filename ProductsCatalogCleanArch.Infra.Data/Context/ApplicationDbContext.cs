@@ -22,6 +22,8 @@ namespace ProductsCatalogCleanArch.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            //utlizando para refenciar automaticamente todas as entidades criadas nas classes de EntitiesConfigurations
+            //desse forma não precisa instanciar um por um (ex. builder.ApplyConfigurations(new ProductConfiguation();)
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
     }
