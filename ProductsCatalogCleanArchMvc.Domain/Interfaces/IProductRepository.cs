@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace ProductsCatalogCleanArch.Domain.Interfaces
 {
-    interface IProductRepository
+    public interface IProductRepository
     {
         Task<IEnumerable<Product>> GetProductsAsync();
         Task<Product> GetByIdAsync(int? id);
