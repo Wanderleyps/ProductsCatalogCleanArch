@@ -30,9 +30,9 @@ namespace ProductsCatalogCleanArch.Infra.IoC
              options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
              //define que os arquivos de migração irão ficar na pasta onde está definido o arquivo de contexto (Infra.Data)
              b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-
-            //AddScoped é recomendação para aplicações web
             
+            //AddScoped é recomendação para aplicações web
+
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
