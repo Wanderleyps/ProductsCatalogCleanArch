@@ -47,7 +47,9 @@ namespace ProductsCatalogCleanArch.Domain.Entities
 
             DomainExceptionValidation.When(stock < 0, "Invalid stock value");
 
-            DomainExceptionValidation.When(image.Length > 250,
+            //comando ? avalia o valor de imagen, se for null, o resultado será null, caso contrário ele testa a expressão.
+            //O objetivo e evitar que gere uma exceção NullReferenceException.
+            DomainExceptionValidation.When(image?.Length > 250,
                 "Invalid image name, too long, maximum 250 characters");
 
             Name = name;
