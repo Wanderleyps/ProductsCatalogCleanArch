@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProductsCatalogCleanArch.Application.Interfaces;
+using ProductsCatalogCleanArch.Application.Mappings;
+using ProductsCatalogCleanArch.Application.Services;
 using ProductsCatalogCleanArch.Domain.Interfaces;
 using ProductsCatalogCleanArch.Infra.Data.Context;
 using ProductsCatalogCleanArch.Infra.Data.Repositories;
@@ -35,6 +38,11 @@ namespace ProductsCatalogCleanArch.Infra.IoC
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            //necessário informar o nome do arquivo onde foram definidas as configurações do AutoMapper
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
 
             return services;
         }

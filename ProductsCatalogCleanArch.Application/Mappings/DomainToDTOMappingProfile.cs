@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProductsCatalogCleanArch.Application.Mappings
 {
-    class DomainToDTOMappingProfile : Profile
+    public class DomainToDTOMappingProfile : Profile
     {
         public DomainToDTOMappingProfile()
         {
