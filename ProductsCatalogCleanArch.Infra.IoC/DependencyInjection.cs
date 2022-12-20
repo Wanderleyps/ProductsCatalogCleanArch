@@ -35,7 +35,6 @@ namespace ProductsCatalogCleanArch.Infra.IoC
              b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
             
             //AddScoped é recomendação para aplicações web
-
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
