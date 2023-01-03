@@ -48,9 +48,10 @@ namespace ProductsCatalogCleanArch.WebUI
 
             app.UseEndpoints(endpoints =>
             {
+                //Define o controlador que é acionado quando a aplicação é iniciada
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Products}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
