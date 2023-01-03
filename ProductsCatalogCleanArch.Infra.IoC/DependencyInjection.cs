@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProductsCatalogCleanArch.Application.Interfaces;
@@ -7,6 +8,7 @@ using ProductsCatalogCleanArch.Application.Services;
 using ProductsCatalogCleanArch.Domain.Interfaces;
 using ProductsCatalogCleanArch.Infra.Data.Context;
 using ProductsCatalogCleanArch.Infra.Data.Repositories;
+using System;
 
 namespace ProductsCatalogCleanArch.Infra.IoC
 {
@@ -42,6 +44,10 @@ namespace ProductsCatalogCleanArch.Infra.IoC
             services.AddScoped<ICategoryService, CategoryService>();
             //necessário informar o nome do arquivo onde foram definidas as configurações do AutoMapper
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+
+            //registrando a DI dos handlers
+            var myHandlers = AppDomain.CurrentDomain.Load("ProductsCatalogCleanArch.Application");
+            services.AddMediatR(myHandlers);
 
             return services;
         }
