@@ -40,6 +40,7 @@ namespace ProductsCatalogCleanArch.WebUI
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            //para poder utilizar os arquivos estaticos no wwwroot é necessário ativar este middleware
             app.UseStaticFiles();
 
             app.UseRouting();
