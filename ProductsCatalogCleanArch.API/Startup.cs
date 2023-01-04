@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProductsCatalogCleanArch.Infra.IoC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace ProductsCatalogCleanArch.API
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddInfrastructureAPI(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

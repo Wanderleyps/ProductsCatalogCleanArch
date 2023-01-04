@@ -12,8 +12,4 @@
     <ProjectReference Include="..\ProductsCatalogCleanArch.Infra.IoC\ProductsCatalogCleanArch.Infra.IoC.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
