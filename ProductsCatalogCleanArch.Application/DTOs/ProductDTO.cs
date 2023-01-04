@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ProductsCatalogCleanArch.Application.DTOs
 {
@@ -38,6 +39,7 @@ namespace ProductsCatalogCleanArch.Application.DTOs
         [DisplayName("Product Image")]
         public string Image { get; set; }
 
+        [JsonIgnore]
         public Category Category { get; set; }
 
         [DisplayName("Categories")]
