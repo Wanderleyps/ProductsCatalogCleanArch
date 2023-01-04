@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProductsCatalogCleanArch.Application.DTOs;
 using ProductsCatalogCleanArch.Application.Interfaces;
 using System;
@@ -6,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace ProductsCatalogCleanArch.WebUI.Controllers
 {
+    //propriedade define que todos os actions deste controlador so poderão ser acessados por usuários autenticados
+    [Authorize]
     public class CategoriesController : Controller
     {
         private readonly ICategoryService _categoryService;

@@ -41,7 +41,7 @@ namespace ProductsCatalogCleanArch.WebUI.Controllers
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.(password must be strong).");
+                ModelState.AddModelError(string.Empty, "Invalid login attempt. Password must be strong.");
                 return View(model);
             }
         }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProductsCatalogCleanArch.Domain.Account;
 using ProductsCatalogCleanArch.Infra.IoC;
 
 namespace ProductsCatalogCleanArch.WebUI
@@ -27,7 +28,8 @@ namespace ProductsCatalogCleanArch.WebUI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+            ISeedUserRoleInitial seedUserRoleInitial)
         {
             if (env.IsDevelopment())
             {
@@ -45,6 +47,12 @@ namespace ProductsCatalogCleanArch.WebUI
 
             app.UseRouting();
 
+            //criando users e roles iniciais
+            seedUserRoleInitial.SeedRoles();
+            seedUserRoleInitial.SeedUsers();
+
+            //importante seguir essa ordem
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -25,7 +25,7 @@ namespace ProductsCatalogCleanArch.Infra.Data.Identity
             _userManager = userManager;
         }
 
-        public void SeedRoles()
+        public void SeedUsers()
         {
             //verifica se o usuário já existe
             if (_userManager.FindByEmailAsync("usuario@localhost").Result == null)
@@ -70,7 +70,7 @@ namespace ProductsCatalogCleanArch.Infra.Data.Identity
             }
         }
 
-        public void SeedUsers()
+        public void SeedRoles()
         {
             if (!_roleManager.RoleExistsAsync("User").Result)
             {

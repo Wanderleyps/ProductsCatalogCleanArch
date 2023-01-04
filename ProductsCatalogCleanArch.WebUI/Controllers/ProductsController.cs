@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ProductsCatalogCleanArch.Application.DTOs;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProductsCatalogCleanArch.WebUI.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly IProductService _productService;
@@ -71,6 +73,8 @@ namespace ProductsCatalogCleanArch.WebUI.Controllers
             return View(productDto);
         }
 
+        //só podem acessar os usuários autenticados e que façam parte desta role
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
