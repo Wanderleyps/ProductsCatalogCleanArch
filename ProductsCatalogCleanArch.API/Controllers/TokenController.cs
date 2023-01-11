@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -28,6 +29,7 @@ namespace ProductsCatalogCleanArch.API.Controllers
             _configuration = configuration;
         }
 
+        [AllowAnonymous]
         [HttpPost("LoginUser")]
         public async Task<ActionResult<UserToken>> Login([FromBody] LoginModel userInfo)
         {
@@ -44,6 +46,7 @@ namespace ProductsCatalogCleanArch.API.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("CreateUser")]
         [ApiExplorerSettings(IgnoreApi = true)]//faz com que esse endpoin não seja exposto
         public async Task<ActionResult> CreateUser([FromBody] LoginModel userInfo)
