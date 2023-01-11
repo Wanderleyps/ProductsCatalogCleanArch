@@ -29,6 +29,9 @@ namespace ProductsCatalogCleanArch.API
         {
 
             services.AddInfrastructureAPI(Configuration);
+
+            services.AddInfrastructureJWT(Configuration);
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
