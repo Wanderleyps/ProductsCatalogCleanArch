@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductsCatalogCleanArchMvc.Domain\ProductsCatalogCleanArch.Domain.csproj" />
+    <ProjectReference Include="..\ProductsCatalogCleanArch.Domain\ProductsCatalogCleanArch.Domain.csproj" />
   </ItemGroup>
 
 </Project>

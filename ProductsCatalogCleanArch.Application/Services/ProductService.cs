@@ -4,16 +4,12 @@ using ProductsCatalogCleanArch.Application.DTOs;
 using ProductsCatalogCleanArch.Application.Interfaces;
 using ProductsCatalogCleanArch.Application.Products.Commands;
 using ProductsCatalogCleanArch.Application.Products.Queries;
-using ProductsCatalogCleanArch.Domain.Entities;
-using ProductsCatalogCleanArch.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ProductsCatalogCleanArch.Application.Services
-{   
+{
     public class ProductService : IProductService
     {
         private readonly IMapper _mapper;
