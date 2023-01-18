@@ -2,7 +2,7 @@
 
 ## ASP.NET Core Based 
 
-This template is a simple startup project to start with Clean Architecture using ASP.NET Core, Entity Framework Core and Identity.
+This template is a simple startup project to start with Clean Architecture. Using ASP.NET Core, Entity Framework Core and Identity.
 
 ## Prerequirements
 
